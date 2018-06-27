@@ -14,7 +14,7 @@ allprojects {
 }
 ```
 
-Add the library with version to your dependencies:
+Add the sojourn library and releated dependencies to the dependencies declaration:
 
 ```
 dependencies {
