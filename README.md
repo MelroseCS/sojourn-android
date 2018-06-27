@@ -29,3 +29,9 @@ dependencies {
     compile 'org.altbeacon:android-beacon-library:2+'
 }
 ```
+
+Import the library with:
+
+```
+-import com.melrosecomputing.sojourn.export.Sojourn;
+```
