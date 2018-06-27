@@ -106,7 +106,7 @@ You can apply custom attributes to the device record.  Existing values will be o
 Data types supported: String, Date, Number.
 
 ```
-applyCustomAttributes(HashMap<String, Object> attributes)
+void applyCustomAttributes(HashMap<String, Object> attributes)
 ```
 
 ## Inbox
@@ -127,7 +127,7 @@ interface InboxResultCallback {
 Gets the total number of messages in the inbox and the total number of unread messages in the inbox.
 
 ```
-getInboxCount(InboxCountResultCallback callback)
+void getInboxCount(InboxCountResultCallback callback)
 
 interface InboxCountResultCallback { 
     void handle(int total, int unread); 
@@ -162,7 +162,7 @@ interface InboxBooleanResultCallback {
 Deletes a specific message identified by it's objectId.
 
 ```
- deleteInboxMessage(String objectId, InboxBooleanResultCallback callback)
+void deleteInboxMessage(String objectId, InboxBooleanResultCallback callback)
  
  interface InboxBooleanResultCallback { 
     void handle(boolean succeeded, Error error); 
