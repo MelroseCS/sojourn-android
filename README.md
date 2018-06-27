@@ -33,5 +33,5 @@ dependencies {
 Import the library in java files with:
 
 ```
-import com.melrosecomputing.sojourn.export.Sojourn;
+import com.melrosecomputing.sojourn.export.*;
 ```
