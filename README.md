@@ -100,6 +100,37 @@ To enable sojourn to start collecting location data you must explicitly enable i
 void enableLocation(boolean enabled)
 ```
 
+A full example of requesting location permission and enabling location in sojourn.
+
+```
+    private static final int MY_PERMISSION_REQUEST_READ_FINE_LOCATION = 111;
+    
+    private void requestEnableLocation() {
+        // Check for permission
+        if (ContextCompat.checkSelfPermission(this, android.Manifest.permission.ACCESS_FINE_LOCATION)
+                != PackageManager.PERMISSION_GRANTED) {
+            ActivityCompat.requestPermissions(
+                    this, // Activity
+                    new String[]{android.Manifest.permission.ACCESS_FINE_LOCATION},
+                    MY_PERMISSION_REQUEST_READ_FINE_LOCATION);
+        } else {
+            Sojourn.enableLocation(true);
+        }
+    }
+    
+    @Override
+    public void onRequestPermissionsResult(int requestCode, @NonNull String permissions[], @NonNull int[] grantResults) {
+        if (requestCode == MY_PERMISSION_REQUEST_READ_FINE_LOCATION) {
+            if (grantResults.length > 0 && grantResults[0] == PackageManager.PERMISSION_GRANTED) {
+                Sojourn.enableLocation(true);
+            } else {
+                Log.i("InboxActivity", "Fine location permission denied");
+            }
+        }
+
+    }
+```
+
 ## Custom Attribute
 You can apply custom attributes to the device record.  Existing values will be overwritten.  This will allow for example more complex rules around sending messages based on gender or team preference etc.
 
