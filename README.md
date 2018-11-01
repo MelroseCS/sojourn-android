@@ -104,7 +104,7 @@ public class MainApplication extends Application {
 Attempts to use any `Sojourn` method before initialization will fail.
 
 ## Enable Location 
-To enable sojourn to start collecting location data you must explicitly enable it using the Sojourn class method enableLocation(). You must first ensure that the user has granted the ACCESS_FINE_LOCATION permission in your application or this setting will have no effect. This must be called after initialisation.
+To enable sojourn to start collecting location data you must explicitly enable it using the Sojourn class method enableLocation(). You must also ensure that the user has granted the ACCESS_FINE_LOCATION permission to your application or this setting will have no effect. This can be checked after initialisation.
 
 ```
 void enableLocation(boolean enabled)
@@ -131,10 +131,14 @@ import android.util.Log;
                     this, // Activity
                     new String[]{android.Manifest.permission.ACCESS_FINE_LOCATION},
                     MY_PERMISSION_REQUEST_READ_FINE_LOCATION);
+        } else{
+            Sojourn.enableLocation(true);        
         }
-        Sojourn.enableLocation(true);        
     }
     
+    /**
+    *   Handles user response, and sets Sojourn configuration
+    */
     @Override
     public void onRequestPermissionsResult(int requestCode, @NonNull String permissions[], @NonNull int[] grantResults) {
         if (requestCode == MY_PERMISSION_REQUEST_READ_FINE_LOCATION) {
@@ -142,6 +146,7 @@ import android.util.Log;
                 Sojourn.enableLocation(true);
             } else {
                 Log.i("InboxActivity", "Fine location permission denied");
+                Sojourn.enableLocation(false);
             }
         }
 
