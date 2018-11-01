@@ -113,6 +113,12 @@ void enableLocation(boolean enabled)
 A full example of checking permissions, requesting location permission and then enabling location in sojourn:
 
 ```
+import android.content.pm.PackageManager;
+import android.support.v4.app.ActivityCompat;
+import android.support.v4.content.ContextCompat;
+
+//...
+
     private static final int MY_PERMISSION_REQUEST_READ_FINE_LOCATION = 111;
     
     private void requestEnableLocation() {
