@@ -35,7 +35,7 @@ Features
 
 ### Android Studio Integration
 
-Add this repository to the app-level build.gradle file:
+Add this repository to the *project*-level build.gradle file:
 
 ```
 allprojects {
@@ -47,7 +47,7 @@ allprojects {
 }
 ```
 
-Add the sojourn library and related dependencies to the dependencies declaration:
+Add the sojourn library and related dependencies to the *module*-level build.gradle file:
 
 ```
 dependencies {
