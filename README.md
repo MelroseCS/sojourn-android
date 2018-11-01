@@ -116,6 +116,8 @@ A full example of checking permissions, requesting location permission and then 
 import android.content.pm.PackageManager;
 import android.support.v4.app.ActivityCompat;
 import android.support.v4.content.ContextCompat;
+import android.support.annotation.NonNull;
+import android.util.Log;
 
 //...
 
