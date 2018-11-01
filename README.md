@@ -104,13 +104,13 @@ public class MainApplication extends Application {
 Attempts to use any `Sojourn` method before initialization will fail.
 
 ## Enable Location 
-To enable sojourn to start collecting location data you must explicitly enable it using the following. You must first ensure that the user has granted the ACCESS_FINE_LOCATION permission in your application or this setting will have no effect. This must be called after initialisation.
+To enable sojourn to start collecting location data you must explicitly enable it using the Sojourn class method enableLocation(). You must first ensure that the user has granted the ACCESS_FINE_LOCATION permission in your application or this setting will have no effect. This must be called after initialisation.
 
 ```
 void enableLocation(boolean enabled)
 ```
 
-A full example of requesting location permission and enabling location in sojourn.
+A full example of checking permissions, requesting location permission and then enabling location in sojourn:
 
 ```
     private static final int MY_PERMISSION_REQUEST_READ_FINE_LOCATION = 111;
