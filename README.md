@@ -131,9 +131,8 @@ import android.util.Log;
                     this, // Activity
                     new String[]{android.Manifest.permission.ACCESS_FINE_LOCATION},
                     MY_PERMISSION_REQUEST_READ_FINE_LOCATION);
-        } else {
-            Sojourn.enableLocation(true);
         }
+        Sojourn.enableLocation(true);        
     }
     
     @Override
